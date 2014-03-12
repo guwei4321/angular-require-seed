@@ -175,7 +175,7 @@ module.exports = function (grunt) {
         }
       }
     },
-      requirejs: {
+    requirejs: {
           dist: {
               // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
               options: {
@@ -183,7 +183,7 @@ module.exports = function (grunt) {
                   baseUrl:'<%= yeoman.app %>/scripts',
                   mainConfigFile:'<%= yeoman.app %>/scripts/config.js',
                   optimize: 'none',
-                  dir: '.tmp/scripts/requirejs/',
+                  dir: '.tmp/scripts/',
                   modules:[
                       {name:"main"},
                       {name:"main2"}
@@ -219,14 +219,14 @@ module.exports = function (grunt) {
                   '<%= yeoman.dist %>/bower_components/requirejs/require.js':['<%= yeoman.app %>/bower_components/requirejs/require.js']
               }
           }
-      },
-      uglify: {
+     },
+    uglify: {
           dist : {
               options: {
                   banner : '/*! <%= yeoman.pkg.name %> - <%= yeoman.pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %> - <%= yeoman.pkg.author %>*/\n',
-                  beautify: false,// 是否漂亮格式
-                  mangle:false,// 是否短化变量
-                  compress:true// 是否压缩格式
+                  beautify: false,
+                  mangle:false,
+                  compress:true
               },
               files: [
                   {
@@ -238,7 +238,7 @@ module.exports = function (grunt) {
                   }
               ]
           }
-      },
+    },
       //src:['<%= yeoman.dist %>/scripts/{,*/}*.js']
     // Renames files for browser caching purposes
     rev: {
